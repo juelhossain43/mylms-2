@@ -23,24 +23,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-       
+
      $defaulPermissions = ['lead-management', 'create-admin','user-management'];
      foreach($defaulPermissions as $permission){
       Permission::create(['name'=>$permission]);
      }
-  
+
 
      $this->create_user_with_role('Super Admin', 'Super Admin', 'superadmin@lms.com' );
      $this->create_user_with_role('Communication', 'Communication Team', 'communication@lms.com' );
      $teacher=$this->create_user_with_role('Teacher', 'Teacher', 'teacher@lms.com' );
      $this->create_user_with_role('Leads', 'Leads', 'leads@lms.com' );
-     
+
 
     //lead create
     Lead::factory()->count(100)->create();
 
     $course= Course::create([
       'name'=>'Laravel',
+      'slug'=>'Laravel',
       'description'=>'laravel is a web application framework with expressive, elegant syntax',
       'image'=>'https://laravel-courses.com/storage/series/54e8baab-727e-4593-a78a-e0c22c569b61.png',
       'user_id'=>$teacher->id,
@@ -63,13 +64,13 @@ class DatabaseSeeder extends Seeder
       ]);
 
       if($type=='Super Admin'){
-         
+
           $role->givePermissionTo(Permission::all());
 
         }elseif($type=='Leads'){
           $role->givePermissionTo('lead-management');
         }
-        
+
       $user->assignRole($role);
 
       return $user;

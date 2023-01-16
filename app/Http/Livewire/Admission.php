@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 
 class Admission extends Component
 {
-   
+
     public $search;
     public $leads = [];
     public $lead_id;
@@ -56,7 +56,7 @@ class Admission extends Component
             'name'=>'Course:'. $this->selectedCourse->name,
             'price'=>$this->selectedCourse->price,
             'quantity'=>1,
-            'invoice_id'=>$invoice->id, 
+            'invoice_id'=>$invoice->id,
         ]);
 
         $this->selectedCourse->students()->attach($user->id);
@@ -72,11 +72,11 @@ class Admission extends Component
         $this->course_id=null;
         $this->lead_id=null;
         $this->search=null;
-        //$this->leads=null;
+        $this->leads=[];
 
 
         flash()->addSuccess('Addmission Success');
 
     }
-    
+
 }

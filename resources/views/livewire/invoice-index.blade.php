@@ -22,17 +22,16 @@
                         <a class="mr-1" href="">
                         @include('components.icon.edit')
                         </a>
-                        <a class="mr-1" href="{{ route('invoice-show','$invoice->id') }}">
+                        <a class="mr-1" href="{{ route('invoice-show',$invoice->id) }}">
                         @include('components.icon.eye')
                         </a>
-                        
+
                        <form class="ml-1" onsubmit="return confirm('Are you Sure?');" wire:submit.prevent="invoiceDelete({{ $invoice->id }})">
                     <button type="submit">
                         @include('components.icon.trash')
                     </button>
                     </form>
                     </div>
-
 
                 </td>
             </tr>
@@ -41,4 +40,6 @@
     {{-- <div class="mt-4">
     {{ $invoice->links() }}
     </div> --}}
+
 </div>
+

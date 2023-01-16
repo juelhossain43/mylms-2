@@ -33,10 +33,11 @@ class InvoiceController extends Controller
             $items[] = (new InvoiceItem())->title('Payment')->pricePerUnit(-$payment->amount)->quantity(1);
         }
 
-       
+
 
         $invoice = \LaravelDaily\Invoices\Invoice::make()
             ->buyer($customer)
+            ->currencySymbol('tk')
             ->addItems($items);
 
         return $invoice->stream();

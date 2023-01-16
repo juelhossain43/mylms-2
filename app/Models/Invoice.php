@@ -25,7 +25,7 @@ class Invoice extends Model
         return $this->hasMany(Payment::class);
     }
     public function amount(){
-       
+
         $amounts = [
             'total' => 0,
             'paid' => 0,
