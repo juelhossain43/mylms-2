@@ -27,7 +27,7 @@ class CourseCreate extends Component
         'Wednesday',
         'Thursday',
         'Friday',
-        'Saturday'
+        'Saturday',
     ];
 
     protected $rules = [

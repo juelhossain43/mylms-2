@@ -1,27 +1,27 @@
-{{-- <div>
+ <div>
     <table class="w-full table-auto">
         <tr>
             <th class="border px-4 py-2 text-left">Name</th>
-            <th class="border px-4 py-2 text-left">Email</th>
-            <th class="border px-4 py-2 text-left">Phone</th>
-            <th class="border px-4 py-2">Registered</th>
+            <th class="border px-4 py-2 text-left">Description</th>
+            <th class="border px-4 py-2 text-left">price</th>
             <th class="border px-4 py-2">Action</th>
         </tr>
-        @foreach ($leads as $lead )
+        @foreach ($courses as $course )
             <tr>
-                <td class="border px-4 py-2 ">{{ $lead->name }}</td>
-                <td class="border px-4 py-2 ">{{ $lead->email }}</td>
-                <td class="border px-4 py-2 ">{{ $lead->phone }}</td>
-                <td class="border px-4 py-2 text-center">{{ date('F j,Y',strtotime($lead->created_at)) }}</td>
+                <td class="border px-4 py-2 ">{{ $course->name }}</td>
+                <td class="border px-4 py-2 ">{{ $course->description }}</td>
+                <td class="border px-4 py-2 ">{{ $course->price }}</td>
+
+
                 <td class="border px-4 py-2 text-center">
                     <div class="flex items-center justify-center">
-                        <a href="{{ route('lead.edit',$lead->id) }}">
+                        <a href="{{ route('course.edit',$course->id) }}">
                         @include('components.icon.edit')
                         </a>
-                        <a class="px-2" href="{{ route('lead.show',$lead->id) }}">
+                        <a class="px-2" href="{{ route('course.show',$course->id) }}">
                         @include('components.icon.eye')
                         </a>
-                       <form onsubmit="return confirm('Are you Sure?');" wire:submit.prevent="leadDelete({{ $lead->id }})">
+                       <form onsubmit="return confirm('Are you Sure?');" wire:submit.prevent="courseDelete({{ $course->id }})">
                     <button type="submit">
                         @include('components.icon.trash')
                     </button>
@@ -34,6 +34,6 @@
         @endforeach
     </table>
     <div class="mt-4">
-    {{ $leads->links() }}
+    {{ $courses->links() }}
     </div>
-</div> --}}
+</div>
