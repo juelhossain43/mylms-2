@@ -48,7 +48,7 @@ class DatabaseSeeder extends Seeder
       'price'=>500,
     ]);
 
-    Clause::factory(10)->create();
+    //Clause::factory(10)->create();
 
 
     }
