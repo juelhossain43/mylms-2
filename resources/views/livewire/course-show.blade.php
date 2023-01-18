@@ -1,4 +1,4 @@
-dd('$course');
+
 <div class="mx-auto p-4 text-gray-800">
         <h1 class="font-bold mb-2 underline">{{$course->name}}</h1>
         <p class="mb-4 italic">Price: ${{$course->price}}</p>
@@ -18,18 +18,18 @@ dd('$course');
                 <td class="border px-4 py-2">{{$class->name}}</td>
                 <td class="border px-4 py-2">
                     <div class="flex items-center justify-center">
-                        <a class="mr-1" href="{{route('class.edit',$class->id)}}">
-                            @include('components.icons.edit')
-                        </a>
+{{--                        <a class="mr-1" href="{{route('clause.edit',$class->id)}}">--}}
+{{--                            @include('components.icons.edit')--}}
+{{--                        </a>--}}
 
-                        <a class="mr-1" href="{{route('class.show', $class->id)}}">
-                            @include('components.icons.eye')
-                        </a>
+{{--                        <a class="mr-1" href="{{route('clause.show', $class->id)}}">--}}
+{{--                            @include('components.icons.eye')--}}
+{{--                        </a>--}}
 
                         <form class="ml-1" onsubmit="return confirm('Are you sure?');"
                               wire:submit.prevent="clauseDelete({{$class->id}})">
                             <button type="submit">
-                                @include('components.icons.trash')
+{{--                                @include('components.icons.trash')--}}
                             </button>
                         </form>
                     </div>

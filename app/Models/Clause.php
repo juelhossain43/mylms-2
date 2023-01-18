@@ -18,18 +18,26 @@ class Clause extends Model
     protected $table = 'clauses';
 
     use HasFactory;
-    public function homework(){
+    public function homeworks()
+    {
         return $this->hasMany(Homework::class);
     }
-    public function attendances(){
+
+    public function attendances()
+    {
         return $this->hasMany(Attendance::class);
     }
+
+    public function notes() {
+        return $this->belongsToMany(Note::class, 'curriculum_note');
+    }
+
     public function course()
     {
         return $this->belongsTo(Course::class);
     }
 
     public function presentStudents() {
-        return Attendance::where('clasuse_id', $this->id)->count();
+        return Attendance::where('clause_id', $this->id)->count();
     }
 }

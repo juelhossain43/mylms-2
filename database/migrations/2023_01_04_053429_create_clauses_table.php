@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('week_day');
-            $table->string('class_time');
-            $table->string('end_date');
+            $table->time('class_time');
+            $table->date('end_date');
             $table->unsignedBigInteger('course_id');
             $table->timestamps();
 

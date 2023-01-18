@@ -11,9 +11,9 @@ class CourseIndex extends Component
 {
     public function render()
     {
-        $courses=Course::paginate(10);
+        $course=Course::paginate(10);
         return view('livewire.course-index', [
-            'courses'=>$courses
+            'courses'=>$course
         ]);
     }
     public function courseDelete($id){
