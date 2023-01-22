@@ -29,7 +29,7 @@ class ClauseEdit extends Component
         $clause->name = $this->name;
         $clause->save();
 
-        flash()->addSuccess('Curriculum updated successfully');
+        flash()->addSuccess('Class updated successfully');
 
     }
 }

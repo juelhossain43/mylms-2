@@ -29,7 +29,7 @@ class Clause extends Model
     }
 
     public function notes() {
-        return $this->belongsToMany(Note::class, 'curriculum_note');
+        return $this->belongsToMany(Note::class, 'clause_note');
     }
 
     public function course()
