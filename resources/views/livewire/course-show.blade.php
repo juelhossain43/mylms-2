@@ -19,17 +19,17 @@
                 <td class="border px-4 py-2">
                     <div class="flex items-center justify-center">
                         <a class="mr-1" href="{{route('class.edit',$class->id)}}">
-                            @include('components.icons.edit')
+                            @include('components.icon.edit')
                         </a>
 
                         <a class="mr-1" href="{{route('class.show', $class->id)}}">
-                            @include('components.icons.eye')
+                            @include('components.icon.eye')
                         </a>
 
                         <form class="ml-1" onsubmit="return confirm('Are you sure?');"
                               wire:submit.prevent="clauseDelete({{$class->id}})">
                             <button type="submit">
-                                @include('components.icons.trash')
+                                @include('components.icon.trash')
                             </button>
                         </form>
                     </div>

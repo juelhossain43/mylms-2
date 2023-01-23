@@ -23,9 +23,17 @@
                     <x-nav-link :href="route('course.index')" :active="request()->routeIs('course.index')">
                         {{ __('Course') }}
                     </x-nav-link>
-                    
+
                     <x-nav-link :href="route('invoice-index')" :active="request()->routeIs('invoice-index')">
                         {{ __('Invoices') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('question.index')" :active="request()->routeIs('question.index')">
+                        {{ __('Question') }}
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('quiz.index')" :active="request()->routeIs('quiz.index')">
+                        {{ __('Quiz') }}
                     </x-nav-link>
 
                     @can('lead-management')
@@ -33,7 +41,7 @@
                         {{ __('Leads') }}
                     </x-nav-link>
                     @endcan
-                   
+
                 </div>
             </div>
 
@@ -58,13 +66,13 @@
                         </x-dropdown-link>
 
                         @can('user-management')
-                        
+
                         <x-dropdown-link :href="route('user.index')">
                             {{ __('Users') }}
                         </x-dropdown-link>
                         @endcan
 
-                        
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf

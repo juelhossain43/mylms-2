@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Attendance extends Model
+class QuizIndex extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'clause_id',
-
-        'user_id'
-    ];
 }

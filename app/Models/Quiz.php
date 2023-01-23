@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Attendance extends Model
+class Quiz extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'clause_id',
-
-        'user_id'
+        'name',
     ];
+
+    public function questions() {
+        return $this->belongsToMany(Question::class, 'quiz_question', 'quiz_id', 'question_id');
+    }
 }

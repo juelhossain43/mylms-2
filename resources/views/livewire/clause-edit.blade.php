@@ -1,5 +1,5 @@
 <div class="p-6">
-    <form wire:submit.prevent="curriculumUpdate">
+    <form wire:submit.prevent="clauseUpdate">
         <div class="mb-6">
             @include('components.form-field', [
             'name' => 'name',
