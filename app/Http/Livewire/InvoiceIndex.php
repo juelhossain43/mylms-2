@@ -16,4 +16,5 @@ class InvoiceIndex extends Component
             'invoices'=> $invoices
         ]);
     }
+
 }
