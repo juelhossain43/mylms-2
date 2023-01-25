@@ -32,12 +32,12 @@
         </tr>
     </table>
 
-
-
-
     @if($enableAddItem)
         <form wire:submit.prevent="saveNewItem">
-            <div class="flex mb-4">
+            <h2 class="p-4">
+                Add New Items
+            </h2>
+            <div class="flex mb-4 py-6">
                 <div class="w-full">
                     @include('components.form-field', [
                         'name' => 'name',
@@ -72,7 +72,7 @@
             </div>
             <div class="flex">
                 @include('components.wire-loading-btn')
-                <button wire:click="addNewItem" type="button">Cancel</button>
+                <button wire:click="addNewItem" class="pl-4" type="button">Cancel</button>
             </div>
         </form>
     @else
@@ -80,7 +80,7 @@
     @endif
 
 
-    <h3 class="font-bold text-lg mb-2">Payments</h3>
+    <h3 class="font-bold text-lg mb-2 py-2">Payments</h3>
     <ul class="mb-4">
         @foreach($invoice->payments as $payment)
             <li>{{date('F j, Y - g:i:a', strtotime($payment->created_at))}} - ${{number_format($payment->amount, 2)}} - transaction ID: {{$payment->transaction_id}} <button wire:click="refund({{$payment->id}})" class="bg-red-500 text-white px-2 text-xs">Refund</button></li>
